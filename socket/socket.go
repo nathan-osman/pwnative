@@ -1,4 +1,4 @@
-package pwnative
+package socket
 
 import (
 	"context"
@@ -14,8 +14,8 @@ var (
 	}
 )
 
-// SocketConfig provides configuration options to the NewSocket() function.
-type SocketConfig struct {
+// Config provides configuration options to the New() function.
+type Config struct {
 
 	// Filename is the path to the Unix socket to connect to.
 	Filename string
@@ -38,7 +38,7 @@ type SocketConfig struct {
 // specifically to be resilient in the face of errors, reconnecting on
 // disconnect and retrying with backoff as needed.
 type Socket struct {
-	cfg        *SocketConfig
+	cfg        *Config
 	cancel     context.CancelFunc
 	chanClosed chan any
 }
@@ -105,8 +105,8 @@ func (s *Socket) run(ctx context.Context) {
 	}
 }
 
-// NewSocket initializes the socket and starts the connection process.
-func NewSocket(cfg *SocketConfig) *Socket {
+// New initializes a socket and starts the connection process.
+func New(cfg *Config) *Socket {
 	var (
 		ctx, cancel = context.WithCancel(context.Background())
 		s           = &Socket{
