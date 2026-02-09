@@ -1,2 +1,4 @@
+github.com/nitroshare/compare v1.1.0 h1:0G7Tpt8LLXxe05DIzD67Iy9nb5YO3R2TbQlemqOknCw=
+github.com/nitroshare/compare v1.1.0/go.mod h1:YnsFVZura0jowTncpTZtdciU1qdP3nthsqLAc5ql5F4=
 golang.org/x/sys v0.40.0 h1:DBZZqJ2Rkml6QMQsZywtnjnnGvHza6BTfYFWY9kjEWQ=
 golang.org/x/sys v0.40.0/go.mod h1:OgkHotnGiDImocRcuBABYBEXf8A9a87e/uXjp9XT3ks=
